@@ -27,7 +27,7 @@ class TicTacToe
       move(index, current_player(board))
       display_board
     else
-      turn(board)
+      turn
     end
   end
 
@@ -42,4 +42,9 @@ class TicTacToe
   def position_taken?(index)
     !(@board[index].nil? || @board[index] == " ")
   end
+
+  def input_to_index(choice)
+    return choice.to_i - 1
+  end
+
 end
