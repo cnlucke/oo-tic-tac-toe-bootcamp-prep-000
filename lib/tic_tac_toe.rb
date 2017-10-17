@@ -18,14 +18,6 @@ class TicTacToe
     puts "Welcome to Tic Tac Toe!"
   end
 
-  def current_player
-    turn_count % 2 == 0 ? "X" : "O"
-  end
-
-  def turn_count
-    @board.count{|token| token == "X" || token == "O"}
-  end
-
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
@@ -39,7 +31,7 @@ class TicTacToe
     input = gets.strip
     @index = input_to_index(input)
     if(valid_move?)
-      move(current_player)
+      move
       display_board
     else
       turn
@@ -61,8 +53,16 @@ class TicTacToe
   def input_to_index(choice)
     return choice.to_i - 1
   end
+  
+  def turn_count
+    @board.count{|token| token == "X" || token == "O"}
+  end
 
-  def move(current_player)
+  def current_player
+    turn_count % 2 == 0 ? "X" : "O"
+  end
+    
+  def move
     @board[@index] = current_player
   end
 
