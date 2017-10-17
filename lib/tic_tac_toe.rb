@@ -1,5 +1,5 @@
 class TicTacToe
-  WIN_COMBINATIONS = [
+  @WIN_COMBINATIONS = [
     [0,1,2], # Top row
     [3,4,5],  # Middle row
     [6,7,8],  # Bottom row
@@ -53,7 +53,7 @@ class TicTacToe
   def input_to_index(choice)
     return choice.to_i - 1
   end
-  
+
   def turn_count
     @board.count{|token| token == "X" || token == "O"}
   end
@@ -61,7 +61,7 @@ class TicTacToe
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
-    
+
   def move
     @board[@index] = current_player
   end
