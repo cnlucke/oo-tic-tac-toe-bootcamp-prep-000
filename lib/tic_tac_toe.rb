@@ -108,7 +108,7 @@ class TicTacToe
 
   def winner
     if((won?).kind_of?(Array))
-      return board[(won?)[0]]
+      return @board[(won?)[0]]
     end
   end
 
