@@ -14,6 +14,10 @@ class TicTacToe
     ]
   end
 
+  def greet
+    puts "Welcome to Tic Tac Toe!"
+  end
+  
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
