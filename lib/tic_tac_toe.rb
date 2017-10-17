@@ -82,25 +82,31 @@ class TicTacToe
   end
 
   def full?
-  return @board.none? {|position| position == " "}
-end
-
-def draw?
-  if(!won? && full?)
-    return true
-  else
-    return false
+    return @board.none? {|position| position == " "}
   end
-end
 
-def over?
-  if(full? || draw? || won?)
-    return true
-  else
-    return false
+  def draw?
+    if(!won? && full?)
+      return true
+    else
+      return false
+    end
   end
-end
 
+  def over?
+    if(full? || draw? || won?)
+      return true
+    else
+      return false
+    end
+  end
+
+  def winner
+    if((won?).kind_of?(Array))
+      return board[(won?)[0]]
+    end
+  end
+  
   def play
     until(over?)
       turn
