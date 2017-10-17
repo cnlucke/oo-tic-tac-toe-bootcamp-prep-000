@@ -63,8 +63,8 @@ class TicTacToe
     turn_count % 2 == 0 ? "X" : "O"
   end
 
-  def move
-    @board[@index] = current_player
+  def move(index, current_player)
+    @board[index] = current_player
   end
 
   def won?
